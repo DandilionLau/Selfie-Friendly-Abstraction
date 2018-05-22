@@ -47,8 +47,8 @@ The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install M
    make matcaffe
    ```
 
-4. Download training models.
-   To test our model, simply download the trained caffemodels from [[DropBox]](https://www.dropbox.com/s/1md2kewhmnhg6kl/style.zip?dl=0)[[BaiduYun]](https://pan.baidu.com/s/1mWnx6EyA1WuEUUZbfJu96g) and put them to the `model/style/` directory .    
+4. Download training models.   
+   To prepare for the testing step, you may simply download the trained caffemodels from [[DropBox]](https://www.dropbox.com/s/1md2kewhmnhg6kl/style.zip?dl=0)[[BaiduYun]](https://pan.baidu.com/s/1mWnx6EyA1WuEUUZbfJu96g) and put them to the `model/style/` directory .    
 
    Additionally, if you want to train your own style abstraction model, you need to download the VGG-16 model from [[VGG Website]](http://www.robots.ox.ac.uk/~vgg/software/very_deep/caffe/VGG_ILSVRC_16_layers.caffemodel)[[DropBox]](https://www.dropbox.com/s/jwhjdqlg2g6y0bb/vgg16.caffemodel?dl=0)[[BaiduYun]](https://pan.baidu.com/s/1SWUx-7siOjsL-KlhDbyKTw) to compute the perceptual loss. It should be put to the `model/vgg_16layers/` directory.
 
