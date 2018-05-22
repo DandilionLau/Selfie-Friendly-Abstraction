@@ -26,7 +26,7 @@ The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install M
    make matcaffe
    ```
 
-3. Cutomized caffe. Add configuration for our layer . Remeber to modify `caffe.proto` and add the following message:   
+3. Cutomized caffe. Modify `caffe.proto` and append the following message to add configuration for new layer:   
    ```Proto
    Message Parameter{
    // should not conflict with any existing numbers
