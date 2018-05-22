@@ -61,9 +61,8 @@ The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install M
 <img src="pics/scene.jpg" width="1200" />  
 
 #### Citation
-
+   Please cite our paper if you find it helpful for your work:   
 ```
-Please cite our paper if you find it helpful for your work:
 @article{learn_sf_abs2018,
     title={Learning Selfie-Friendly Abstraction from Artistic Style Images},
     author={Yicun Liu, Jimmy Ren, Jianbo Liu, Jiawei Zhang, Xiaohao Chen},
