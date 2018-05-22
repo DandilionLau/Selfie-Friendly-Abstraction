@@ -14,7 +14,7 @@ The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install M
 #### Installation
 1. Clone the code. 
    ```Shell  
-   git clone https://github.com/DandilionLau/Selfie-Friendly-Abstraction.git  
+   git clone https://github.com/DandilionLau/Selfie-Friendly-Abstraction.git 
    cd Selfie-Friendly-Abstraction  
    ```
 
@@ -29,8 +29,8 @@ The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install M
 3. Cutomized caffe. Modify `caffe.proto` and append the following message to add configuration for new layer:   
    ```Proto
    Message Parameter{
-   // should not conflict with any existing numbers
-   optional NNUpsampleParameter nn_upsample_param = 163;
+   // not conflict with any existing numbers
+     optional NNUpsampleParameter nn_upsample_param = 163;
    }
    message NNUpsampleParameter {
      optional uint32 resize = 1 [default = 2];
