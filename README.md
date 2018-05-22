@@ -2,7 +2,7 @@
 
 Yicun Liu | Jimmy Ren |  Jianbo Liu |  Jiawei Zhang | Xiaohao Chen   
 
-This repository contains code for training models from the paper: [Learning Selfie-Friendly Abstraction from Artistic Style Images](https://arxiv.org/abs/1805.02085).
+This repository contains code for the paper: [Learning Selfie-Friendly Abstraction from Artistic Style Images](https://arxiv.org/abs/1805.02085).
 
 Contact: Yicun Liu (stanleylau@link.cuhk.edu.hk)
 
@@ -55,10 +55,22 @@ The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install M
 1. Run `test/test_6chs_reshape.m` at MATLAB to train the model. Remember to include matcaffe before runing test. We provide 99 images downloaded from Flikr for testing, includes portraits, landscapes, wild lifes and other view. The image directory is at `data/testing/`. You may replace it with your own dataset.  
 2. For inter-frame consitency test, please visit our [online demo](https://youtu.be/0AsY26MHih4) to check the results.
 
-#### Sample Results
+#### Results
 <img src="pics/people.jpg" width="1200" />
 <p></p>
 <img src="pics/scene.jpg" width="1200" />  
 
+#### Citation
 
+```
+Please cite our paper if you find it helpful for your work:
+@article{learn_sf_abs2018,
+    title={Learning Selfie-Friendly Abstraction from Artistic Style Images},
+    author={Yicun Liu, Jimmy Ren, Jianbo Liu, Jiawei Zhang, Xiaohao Chen},
+    journal={arXiv preprint arXiv: 1805.02085},
+    year={2018},
+}
+```
+
+ 
 
