@@ -1,0 +1,16 @@
+net: "train/net_reshape.prototxt"
+test_iter: 10
+test_interval: 100
+base_lr: 0.00000001
+momentum: 0.9
+solver_type: 0
+weight_decay: 0.00005
+lr_policy: "step"
+gamma: 0.1
+stepsize: 50000
+display: 10
+max_iter: 100000
+snapshot: 10000 
+snapshot_prefix: "snapshot/composition/snapshot_"
+solver_mode: GPU
+

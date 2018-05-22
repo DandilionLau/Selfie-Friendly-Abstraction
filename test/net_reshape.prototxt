@@ -1,0 +1,465 @@
+# Enter your network definition here.
+# Use Shift+Enter to update the visualization.
+# Enter your network definition here.
+# Use Shift+Enter to update the visualization.
+# Enter your network definition here.
+# Use Shift+Enter to update the visualization.
+name: "net"
+# -> data: N x C x H x W
+
+input: "samples"
+input_shape {
+    dim: 1
+    dim: 6
+    dim: 512
+    dim: 512
+}
+
+input: "mask"
+input_shape
+{
+    dim: 1
+    dim: 512
+    dim: 512
+    dim: 512
+}
+
+layer
+{
+	name: "conv1"
+	type: "Convolution"
+	bottom: "samples"
+	top: "conv1"
+	param
+	{
+		lr_mult: 1
+	}
+	param
+	{
+		lr_mult: 2
+	}
+	convolution_param
+	{
+		num_output: 64
+		pad: 1
+		kernel_size: 3
+		stride: 1
+		weight_filler
+		{
+			type: "xavier"            
+		}
+		bias_filler
+		{
+			type: "constant"
+			value: 0
+		}
+	}
+}
+layer
+{
+	name: "reluconv1"
+	type: "ReLU"
+	bottom: "conv1"
+	top: "conv1"
+}
+
+layer
+{
+	name: "conv2"
+	type: "Convolution"
+	bottom: "conv1"
+	top: "conv2"
+	param
+	{
+		lr_mult: 1
+	}
+	param
+	{
+		lr_mult: 2
+	}
+	convolution_param
+	{
+		num_output: 128
+		pad: 1
+		kernel_size: 4
+		stride: 4
+		weight_filler
+		{
+			type: "xavier"
+		}
+		bias_filler
+		{
+			type: "constant"
+			value: 0
+		}
+	}
+}
+
+layer
+{
+	name: "reluconv2"
+	type: "ReLU"
+	bottom: "conv2"
+	top: "conv2"
+}
+
+layer
+{
+	name: "conv3"
+	type: "Convolution"
+	bottom: "conv2"
+	top: "conv3"
+	param
+	{
+		lr_mult: 1
+	}
+	param
+	{
+		lr_mult: 2
+	}
+	convolution_param
+	{
+		num_output: 128
+		pad: 1
+		kernel_size: 3
+		stride: 1
+		weight_filler
+		{
+			type: "xavier"
+		}
+		bias_filler
+		{
+			type: "constant"
+			value: 0
+		}
+	}
+}
+layer
+{
+	name: "reluconv3"
+	type: "ReLU"
+   	bottom: "conv3"
+	top: "conv3"
+}
+
+layer
+{
+	name: "conv4"
+	type: "Convolution"
+	bottom: "conv3"
+	top: "conv4"
+	param
+	{
+		lr_mult: 1
+	}
+	param
+	{
+		lr_mult: 2
+	}
+	convolution_param
+	{
+		num_output: 128
+		pad: 1
+		kernel_size: 3
+		stride: 1
+		weight_filler
+		{
+			type: "xavier"
+		}
+		bias_filler
+		{
+			type: "constant"
+			value: 0
+		}
+	}
+}
+layer
+{
+	name: "reluconv4"
+	type: "ReLU"
+   	bottom: "conv4"
+	top: "conv4"
+}
+
+layer
+{
+	name: "conv5"
+	type: "Convolution"
+	bottom: "conv4"
+	top: "conv5"
+	param
+	{
+		lr_mult: 1
+	}
+	param
+	{
+		lr_mult: 2
+	}
+	convolution_param
+	{
+		num_output: 128
+		pad: 1
+		kernel_size: 3
+		stride: 1
+		weight_filler
+		{
+			type: "xavier"
+		}
+		bias_filler
+		{
+			type: "constant"
+			value: 0
+		}
+	}
+}
+layer
+{
+	name: "reluconv5"
+	type: "ReLU"
+   	bottom: "conv5"
+	top: "conv5"
+}
+
+layer
+{
+	name: "conv6"
+	type: "Convolution"
+	bottom: "conv5"
+	top: "conv6"
+	param
+	{
+		lr_mult: 1
+	}
+	param
+	{
+		lr_mult: 2
+	}
+	convolution_param
+	{
+		num_output: 128
+		pad: 1
+		kernel_size: 3
+		stride: 1
+		weight_filler
+		{
+			type: "xavier"
+		}
+		bias_filler
+		{
+			type: "constant"
+			value: 0
+		}
+	}
+}
+layer
+{
+	name: "reluconv6"
+	type: "ReLU"
+   	bottom: "conv6"
+	top: "conv6"
+}
+
+layer
+{
+	name: "conv7"
+	type: "Convolution"
+	bottom: "conv6"
+	top: "conv7"
+	param
+	{
+		lr_mult: 1
+	}
+	param
+	{
+		lr_mult: 2
+	}
+	convolution_param
+	{
+		num_output: 512
+		pad: 1
+		kernel_size: 3
+		stride: 1
+		weight_filler
+		{
+			type: "xavier"
+		}
+		bias_filler
+		{
+			type: "constant"
+			value: 0
+		}
+	}
+}
+layer
+{
+	name: "reluconv7"
+	type: "ReLU"
+   	bottom: "conv7"
+	top: "conv7"
+}
+
+layer {
+  name: "NNUp"
+  type: "NNUpsample"
+  bottom: "conv7"
+  top: "NNUp"
+  nn_upsample_param {
+    resize: 4
+  }
+}
+
+
+layer 
+{
+  name: "eltwise_layer_1"
+  type: "Eltwise"
+  bottom: "NNUp"
+  bottom: "mask"
+  top: "eltwise_layer_1"
+  eltwise_param {
+    operation: PROD
+  }
+}
+
+layer {
+    name: "Slicer"
+    type: "Slice"
+    bottom: "eltwise_layer_1"
+    top: "ch_1"
+    top: "ch_2"
+    top: "ch_3"
+    top: "ch_4"
+    top: "ch_5"
+    top: "ch_6"
+    top: "ch_7"
+    top: "ch_8"
+    top: "ch_9"
+    top: "ch_10"
+    top: "ch_11"
+    top: "ch_12"
+    top: "ch_13"
+    top: "ch_14"
+    top: "ch_15"
+    top: "ch_16"
+    slice_param {
+        axis: 1
+        slice_point: 32
+        slice_point: 64
+        slice_point: 96
+        slice_point: 128
+        slice_point: 160
+        slice_point: 192
+        slice_point: 224
+        slice_point: 256
+        slice_point: 288
+        slice_point: 320
+        slice_point: 352
+        slice_point: 384
+        slice_point: 416
+        slice_point: 448
+        slice_point: 480
+    }
+}
+
+layer 
+{
+  name: "eltwise_layer_2"
+  type: "Eltwise"
+  bottom: "ch_1"
+  bottom: "ch_2"
+  bottom: "ch_3"
+  bottom: "ch_4"
+  bottom: "ch_5"
+  bottom: "ch_6"
+  bottom: "ch_7"
+  bottom: "ch_8"
+  bottom: "ch_9"
+  bottom: "ch_10"
+  bottom: "ch_11"
+  bottom: "ch_12"
+  bottom: "ch_13"
+  bottom: "ch_14"
+  bottom: "ch_15"
+  bottom: "ch_16"
+  top: "eltwise_layer_2"
+  eltwise_param {
+    operation: SUM
+  }
+}
+
+layer
+{
+	name: "conv8"
+	type: "Convolution"
+	bottom: "eltwise_layer_2"
+	top: "conv8"
+	param
+	{
+		lr_mult: 1
+	}
+	param
+	{
+		lr_mult: 2
+	}
+	convolution_param
+	{
+		num_output: 32
+		pad: 1
+		kernel_size: 3
+		stride: 1
+		weight_filler
+		{
+			type: "xavier"
+		}
+		bias_filler
+		{
+			type: "constant"
+			value: 0
+		}
+	}
+}
+
+layer
+{
+	name: "reluconv8"
+	type: "ReLU"
+   	bottom: "conv8"
+	top: "conv8"
+}
+
+
+layer
+{
+	name: "conv9"
+	type: "Convolution"
+	bottom: "conv8"
+	top: "conv9"
+	param
+	{
+		lr_mult: 1
+	}
+	param
+	{
+		lr_mult: 2
+	}
+	convolution_param
+	{
+		num_output: 6
+		pad: 1
+		kernel_size: 3
+		stride: 1
+		weight_filler
+		{
+			type: "xavier"
+		}
+		bias_filler
+		{
+			type: "constant"
+			value: 0
+		}
+	}
+}
+
+
+
+
