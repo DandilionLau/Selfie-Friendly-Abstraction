@@ -65,32 +65,36 @@ net.blobs('mask').set_data(mask);
 
 filtered = zeros(size(I,1), size(I,2), size(I,3), 2);
 
-% loading the weights
-net.copy_from(weights);
+    for n = 1:1
 
-net.forward_prefilled();
-output = net.blobs('conv9').get_data();
-v = output(:,:,1:3);
-h = output(:,:,4:6);
+    % loading the weights
+    net.copy_from(weights);
 
-v = permute(v, [2 1 3 4]);
-h = permute(h, [2 1 3 4]);
-v = v(:, :, [3, 2, 1], :);
-h = h(:, :, [3, 2, 1], :);
+    net.forward_prefilled();
+    output = net.blobs('conv9').get_data();
+    v = output(:,:,1:3);
+    h = output(:,:,4:6);
+
+    v = permute(v, [2 1 3 4]);
+    h = permute(h, [2 1 3 4]);
+    v = v(:, :, [3, 2, 1], :);
+    h = h(:, :, [3, 2, 1], :);
 
 
-h(:, end, :) = S(:,1,:) - S(:,end,:);
-v(end, :, :) = S(1,:,:) - S(end,:,:);
-toc
+    h(:, end, :) = S(:,1,:) - S(:,end,:);
+    v(end, :, :) = S(1,:,:) - S(end,:,:);
+    toc
 
-tic
-% recostuction step
-filtered(:,:,:,n) = grad_process(S, v, h, beta);
-toc
+    tic
+    % recostuction step
+    filtered(:,:,:,n) = grad_process(S, v, h, beta);
+    toc
 
-% write filtered image  
-imwrite(filtered(:,:,:,1), strcat('/result/composition/', num2str(m),'.jpg'));
+    % write filtered image  
+    imwrite(filtered(:,:,:,1), strcat('result/composition/', num2str(m),'.jpg'));
 
+    end
+    
 end
 
 

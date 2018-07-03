@@ -19,9 +19,9 @@ for m = 1 : 40
         end
         
         r_idx = random('unid', size(listing, 1));
-        I = imread(strcat('data/selfie/', listing(r_idx).name));
+        I = imread(strcat('data/train/selfie/', listing(r_idx).name));
         I = imresize(I, [512 512]);
-        Iout = imread(strrep(strcat('data/train/composition/', listing(r_idx).name), '.jpg', '.jpg'));        
+        Iout = imread(strrep(strcat('data/train/composition/', listing(r_idx).name), '.jpg', '.JPG'));        
         Iout = imresize(Iout, [512 512]);
         
         orig_img_size = size(I);
@@ -53,7 +53,7 @@ for m = 1 : 40
     labels = single(labels); 
     
     % save patches for training
-    filename = strcat('data/composition/train_64_6chs/patches_', num2str(m));
+    filename = strcat('data/train/composition/train_64_6chs/patches_', num2str(m));
     save(filename, '-v7.3', 'samples', 'labels');
 end
 
