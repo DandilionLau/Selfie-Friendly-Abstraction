@@ -59,7 +59,7 @@ The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install M
    Run `train/train_6chs_reshape.m` at MATLAB to train the model. Remember to include matcaffe before training. In our experiment, the balance factor between loss_pixel and loss_feat is set as 1000. 
 
 #### Testing 
-1. Run `test/test_6chs_reshape.m` at MATLAB to train the model. Remember to include matcaffe before runing the test. We provide 99 images from Flickr for testing, including portraits, landscapes, wild lifes and other scenes. The image directory is at `data/testing/`. You may replace it with your own dataset for testing.
+1. Run `test/test_6chs_reshape.m` at MATLAB to test the model. Remember to include matcaffe before runing the test. We provide 99 images from Flickr for testing, including portraits, landscapes, wild lifes and other scenes. The image directory is at `data/testing/`. You may replace it with your own dataset for testing.
 2. For inter-frame consitency test, please visit our [online demo](https://youtu.be/0AsY26MHih4) to check the results.
 
 #### Results
