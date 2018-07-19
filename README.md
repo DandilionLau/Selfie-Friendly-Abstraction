@@ -1,6 +1,10 @@
 ## Learning Selfie-Friendly Abstraction from Artistic Style Images
 
-Yicun Liu | Jimmy Ren |  Jianbo Liu |  Jiawei Zhang | Xiaohao Chen   
+Yicun Liu | Jimmy Ren |  Jianbo Liu |  Jiawei Zhang | Xiaohao Chen     
+
+##### *ACML 2018*    
+
+---  
 
 This repository contains code for the paper: [Learning Selfie-Friendly Abstraction from Artistic Style Images](https://arxiv.org/abs/1805.02085).
 
@@ -8,7 +12,7 @@ Contact: Yicun Liu (stanleylau@link.cuhk.edu.hk)
 
 <img src="pics/large.jpg" width="1200" />
 
-#### Prerequisites
+#### Prerequisites   
 The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install Matlab (We have tested on R2015a). We have tested our code on GTX TitanX (Maxwell) with CUDA8.0+cuDNNv5. Please install all these prerequisites before running our code.
 
 #### Installation
