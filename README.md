@@ -2,7 +2,7 @@
 
 Yicun Liu | Jimmy Ren |  Jianbo Liu |  Jiawei Zhang | Xiaohao Chen     
 
-##### *ACML 2018*    
+#### *ACML 2018*    
 
 ---  
 
