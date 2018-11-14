@@ -4,9 +4,9 @@ Yicun Liu | Jimmy Ren |  Jianbo Liu |  Jiawei Zhang | Xiaohao Chen
 
 #### *ACML 2018*    
 
----  
+---
 
-This repository contains code for the paper: [Learning Selfie-Friendly Abstraction from Artistic Style Images](https://arxiv.org/abs/1805.02085).
+This repository contains code for the paper: [Learning Selfie-Friendly Abstraction from Artistic Style Images](https://github.com/DandilionLau/Selfie-Friendly-Abstraction).
 
 Contact: Yicun Liu (stanleylau@link.cuhk.edu.hk)
 
@@ -74,13 +74,12 @@ The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install M
 #### Citation
    Please cite our paper if you find it helpful for your work:   
 ```
-@article{learn_sf_abs2018,
-    title={Learning Selfie-Friendly Abstraction from Artistic Style Images},
-    author={Yicun Liu, Jimmy Ren, Jianbo Liu, Jiawei Zhang, Xiaohao Chen},
-    journal={arXiv preprint arXiv: 1805.02085},
-    year={2018},
+@InProceedings{pmlr-v95-liu18a,
+title = {Learning Selfie-Friendly Abstraction from Artistic Style Images},
+author = {Liu, Yicun and Ren, Jimmy and Liu, Jianbo and Chen, Xiaohao},
+booktitle = {Proceedings of The 10th Asian Conference on Machine Learning},
+year = {2018}
 }
 ```
 
- 
 
