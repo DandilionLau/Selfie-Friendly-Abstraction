@@ -6,7 +6,7 @@ Yicun Liu | Jimmy Ren |  Jianbo Liu |  Jiawei Zhang | Xiaohao Chen
 
 ---
 
-This repository contains code for the paper: [Learning Selfie-Friendly Abstraction from Artistic Style Images](https://github.com/DandilionLau/Selfie-Friendly-Abstraction).
+This repository contains code for the paper: [Learning Selfie-Friendly Abstraction from Artistic Style Images](http://proceedings.mlr.press/v95/liu18a.html).
 
 Contact: Yicun Liu (stanleylau@link.cuhk.edu.hk)
 
