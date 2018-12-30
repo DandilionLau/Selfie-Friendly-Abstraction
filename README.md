@@ -80,6 +80,8 @@ author = {Liu, Yicun and Ren, Jimmy and Liu, Jianbo and Chen, Xiaohao},
 booktitle = {Proceedings of The 10th Asian Conference on Machine Learning},
 year = {2018}
 }
+```
+```
 @article{liu2018learning,
   title={Learning Selfie-Friendly Abstraction from Artistic Style Images},
   author={Liu, Yicun and Ren, Jimmy and Liu, Jianbo and Zhang, Jiawei and Chen, Xiaohao},
