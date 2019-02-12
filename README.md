@@ -13,7 +13,7 @@ Contact: Yicun Liu (stanleylau@link.cuhk.edu.hk)
 <img src="pics/large.jpg" width="1200" />
 
 #### Prerequisites   
-The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install Matlab (We have tested on R2015a). We have tested our code on GTX TitanX (Maxwell) with CUDA8.0+cuDNNv5. Please install all these prerequisites before running our code.
+The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install Matlab (We have tested on R2015a). We have tested our code on GTX TitanX (but it can also run on other GPUs with vRAM >= 2G) with CUDA8.0+cuDNNv5. Please install all these prerequisites before running our code.
 
 #### Installation
 1. Clone the code. 
