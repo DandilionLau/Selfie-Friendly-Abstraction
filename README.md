@@ -31,13 +31,13 @@ The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install M
    make matcaffe
    ```
 
-3. Cutomize caffe.    
+3. Customize caffe.    
 
    Add the following message to  `caffe.proto`  to configure the new `NNUp Upsample Layer`:   
 
    ```Proto
    Message Parameter{
-   // Insert to existing class. Try not to conflict with any existing message numbers.
+   // Insert to an existing class. Try not to conflict with any existing message numbers.
      optional NNUpsampleParameter nn_upsample_param = 163;
    }
    message NNUpsampleParameter {
@@ -52,7 +52,7 @@ The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install M
    ```
 
 4. Download training models.   
-   To prepare for the testing step, you may simply download the trained caffemodels from [[DropBox]](https://www.dropbox.com/s/1md2kewhmnhg6kl/style.zip?dl=0)[[BaiduYun]](https://pan.baidu.com/s/1mWnx6EyA1WuEUUZbfJu96g) and put them to the `model/style/` directory .    
+   To prepare for the testing step, you may simply download the trained caffemodels from [[DropBox]](https://www.dropbox.com/s/1md2kewhmnhg6kl/style.zip?dl=0)[[BaiduYun]](https://pan.baidu.com/s/1mWnx6EyA1WuEUUZbfJu96g) and put them to the `model/style/` directory.    
 
    Additionally, if you want to train your own style abstraction model, you need to download the VGG-16 model from [[VGG Website]](http://www.robots.ox.ac.uk/~vgg/software/very_deep/caffe/VGG_ILSVRC_16_layers.caffemodel)[[DropBox]](https://www.dropbox.com/s/jwhjdqlg2g6y0bb/vgg16.caffemodel?dl=0)[[BaiduYun]](https://pan.baidu.com/s/1SWUx-7siOjsL-KlhDbyKTw) to compute the perceptual loss. It should be put to the `model/vgg_16layers/` directory.
 
@@ -63,8 +63,8 @@ The code is tested on 64 bit Linux (Ubuntu 14.04 LTS). You should also install M
    Run `train/train_6chs_reshape.m` at MATLAB to train the model. Remember to include matcaffe before training. In our experiment, the balance factor between loss_pixel and loss_feat is set as 1000. 
 
 #### Testing 
-1. Run `test/test_6chs_reshape.m` at MATLAB to test the model. Remember to include matcaffe before runing the test. We provide 99 images from Flickr for testing, including portraits, landscapes, wild lifes and other scenes. The image directory is at `data/testing/`. You may replace it with your own dataset for testing.
-2. For inter-frame consitency test, please visit our [online demo](https://youtu.be/0AsY26MHih4) to check the results.
+1. Run `test/test_6chs_reshape.m` at MATLAB to test the model. Remember to include matcaffe before running the test. We provide 99 images from Flickr for testing, including portraits, landscapes, wild lives, and other scenes. The image directory is at `data/testing/`. You may replace it with your own dataset for testing.
+2. For the inter-frame consistency test, please visit our [online demo](https://youtu.be/0AsY26MHih4) to check the results.
 
 #### Results
 <img src="pics/people.jpg" width="1200" />
@@ -89,5 +89,3 @@ booktitle = {Proceedings of The 10th Asian Conference on Machine Learning},
 year = {2018}
 }
 ```
-
-
